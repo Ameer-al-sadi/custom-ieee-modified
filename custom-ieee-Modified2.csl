@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<stylesheet xmlns="http://purl.org/net/xbiblio/csl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://purl.org/net/xbiblio/csl http://purl.org/net/xbiblio/csl/csl.xsd" version="1.0">
+  <info>
+    <title>Custom IEEE Style</title>
+    <id>http://www.zotero.org/styles/custom-ieee</id>
+    <link href="http://www.zotero.org/styles/custom-ieee" rel="self"/>
+    <author>
+      <name>Your Name</name>
+    </author>
+  </info>
+
+  <macro name="author">
+    <names variable="author">
+      <name form="short" and="text" delimiter=", "/>
+    </names>
+  </macro>
+
+  <macro name="title">
+    <group>
+      <text variable="title" quotes="true"/>
+    </group>
+  </macro>
+
+  <macro name="publisher">
+    <group>
+      <text variable="publisher" />
+      <text variable="publisher-place" />
+    </group>
+  </macro>
+
+  <macro name="journal">
+    <group>
+      <text variable="container-title" />
+      <text variable="volume" prefix="Vol. " />
+      <text variable="issue" prefix="No. " />
+      <text variable="page" prefix="pp. " />
+      <date variable="issued" prefix=", " />
+    </group>
+  </macro>
+
+  <macro name="conference">
+    <group>
+      <text variable="event" prefix="In: " />
+      <text variable="event-place" />
+      <text variable="page" prefix="pp. " />
+      <date variable="issued" prefix=", " />
+    </group>
+  </macro>
+
+  <citation>
+    <layout prefix="[" suffix="]" delimiter=" ">
+      <group delimiter=", ">
+        <text variable="citation-number"/>
+        <macro name="author"/>
+        <macro name="title"/>
+        <macro name="journal"/>
+        <macro name="conference"/>
+      </group>
+    </layout>
+  </citation>
+
+  <bibliography>
+    <layout delimiter="; ">
+      <group delimiter=", ">
+        <text variable="citation-number"/>
+        <macro name="author"/>
+        <macro name="title"/>
+        <macro name="journal"/>
+        <macro name="conference"/>
+        <macro name="publisher"/>
+      </group>
+    </layout>
+  </bibliography>
+</stylesheet>
